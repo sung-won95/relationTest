@@ -1,5 +1,8 @@
-package com.study.entity;
+package com.study.repository;
 
+import com.study.entity.Course;
+import com.study.entity.Enrollment;
+import com.study.entity.Student;
 import com.study.repository.CourseRepository;
 import com.study.repository.EnrollmentRepository;
 import com.study.repository.StudentRepository;
