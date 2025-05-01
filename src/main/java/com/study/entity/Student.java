@@ -32,11 +32,24 @@ public class Student {
     
     private String name;
 
-    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Enrollment> enrollments = new ArrayList<>();
 
     public void addEnrollment(Enrollment enrollment) {
         enrollments.add(enrollment);
         enrollment.setStudent(this);
+    }
+
+    public void removeEnrollment(Enrollment enrollment) {
+        enrollments.remove(enrollment);
+        enrollment.setStudent(null);
+    }
+
+    public Student(){
+
+    }
+
+    public Student(String name){
+        this.name = name;
     }
 }

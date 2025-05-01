@@ -33,8 +33,7 @@ public class DataInitializer {
         student1.setName("홍길동");
         studentRepository.save(student1);
 
-        Student student2 = new Student();
-        student2.setName("김철수");
+        Student student2 = new Student("김철수");
         studentRepository.save(student2);
 
         // 코스 생성
